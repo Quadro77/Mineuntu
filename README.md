@@ -1,6 +1,6 @@
 # Mineuntu
 
-To Do
+To Do/n
   Automate Driver Installs
     AMD Drivers
     Nvidia Drivers(CUDA)
