@@ -1,11 +1,11 @@
 # Mineuntu
 
-To Do
-  Automate Driver Installs
+|To Do|
+  Automate Driver Install
     AMD Drivers
     Nvidia Drivers(CUDA)
     Intel Drivers
-  Automate Miner installs
+  Automate Miner installs with root user privileges
     lolMiner
     BZMiner
     SRBMiner
