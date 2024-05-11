@@ -50,10 +50,10 @@ wget "https://github.com/$owner/$repo/releases/download/$latest_version/$repo-$v
 
 # Extract the downloaded archive
 echo "Extracting SRBMiner-Multi archive..."
-tar -xzvf "$repo-$latest_version-Linux.tar.gz" || { echo "Error: Failed to extract SRBMiner-Multi archive"; exit 1; }
+tar -xzvf "$repo-$version_with_hyphens-Linux.tar.gz" || { echo "Error: Failed to extract SRBMiner-Multi archive"; exit 1; }
 
 # Change directory to the extracted SRBMiner-Multi directory
-cd "$repo-$latest_version" || { echo "Error: Failed to change directory to $repo-$latest_version"; exit 1; }
+cd "$repo-$version_with_hyphens" || { echo "Error: Failed to change directory to $repo-$latest_version"; exit 1; }
 
 # Copy the SRBMiner-MULTI executable
 echo "Copying SRBMiner-MULTI executable to $script_path..."
