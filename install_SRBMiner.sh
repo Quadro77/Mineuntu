@@ -7,12 +7,12 @@ fi
 
 # Set user account
 username=$(whoami)
-script_path="/home/$username/miners/sbrminer"
+folder_path="/home/$username/miners/srbminer"
 
 # Check if script path is valid, create if it doesn't exist
-if [ ! -d "$script_path" ]; then
-    echo "$script_path does not exist, creating it..."
-    mkdir -p "$script_path" || { echo "Error: Failed to create $script_path directory"; exit 1; }
+if [ ! -d "$folder_path" ]; then
+    echo "$folder_path does not exist, creating it..."
+    mkdir -p "$folder_path" || { echo "Error: Failed to create $folder_path directory"; exit 1; }
 fi
 
 # Check if /tmp directory exists
@@ -20,9 +20,6 @@ if [ ! -d "/home/$username/tmp" ]; then
     echo "/home/$username/tmp directory does not exist, creating it..."
     mkdir /home/$username/tmp || { echo "Error: Failed to create /home/$username/tmp directory"; exit 1; }
 fi
-
-# Change directory to /home/$username/tmp
-cd /home/$username/tmp || { echo "Error: Failed to change directory to /home/$username/tmp"; exit 1; }
 
 # GitHub repository owner and name
 owner=doktor83
@@ -35,13 +32,15 @@ latest_release=$(curl -s "https://api.github.com/repos/$owner/$repo/releases/lat
 latest_version=$(echo "$latest_release" | jq -r '.tag_name')
 
 # Check if the installed version is different from the latest version
-if [ -f "$script_path/version.txt" ]; then
-    installed_version=$(<"$script_path/version.txt")
+if [ -f "$folder_path/version.txt" ]; then
+    installed_version=$(<"$folder_path/version.txt")
     if [ "$installed_version" == "$latest_version" ]; then
         echo "SRBMiner-Multi is already up to date. Installed version: $installed_version"
         exit 0
     fi
 fi
+# Change directory to /home/$username/tmp
+cd /home/$username/tmp || { echo "Error: Failed to change directory to /home/$username/tmp"; exit 1; }
 
 # Download the latest release
 echo "Downloading SRBMiner-Multi $latest_version..."
@@ -56,23 +55,17 @@ tar -xzvf "$repo-$version_with_hyphens-Linux.tar.gz" || { echo "Error: Failed to
 cd "$repo-$version_with_hyphens" || { echo "Error: Failed to change directory to $repo-$latest_version"; exit 1; }
 
 # Copy the SRBMiner-MULTI executable
-echo "Copying SRBMiner-MULTI executable to $script_path..."
-cp SRBMiner-MULTI "$script_path/" || { echo "Error: Failed to copy SRBMiner-MULTI executable"; exit 1; }
+echo "Copying SRBMiner-MULTI executable to $folder_path..."
+cp SRBMiner-MULTI "$folder_path/" || { echo "Error: Failed to copy SRBMiner-MULTI executable"; exit 1; }
 
 # Validate script path
-if [ ! -f "$script_path/SRBMiner-MULTI" ]; then
-    echo "Error: Script not found at $script_path"
+if [ ! -f "$folder_path/SRBMiner-MULTI" ]; then
+    echo "Error: SRBMiner-MULTI not found at $folder_path"
     exit 1
 fi
 
 # Save installed version to a file for future checks
-echo "$latest_version" > "$script_path/version.txt"
-
-# Add sudoers entry
-echo "Adding sudoers entry for $username..."
-echo "$username ALL=(ALL) NOPASSWD: $script_path/SRBMiner-MULTI" | tee -a /etc/sudoers
-
-echo "Sudoers entry added successfully for $username to run $script_path/SRBMiner-MULTI without password."
+echo "$latest_version" > "$folder_path/version.txt"
 
 # Clean up all files in the /tmp directory
 echo "Cleaning up all temporary files..."
