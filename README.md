@@ -3,7 +3,7 @@
 as of 12/05/2024 gpu drivers need Ubuntu 22 
 
 ##To Do
-  Automate Driver Install
+  #Automate Driver Install
     AMD Drivers
     Nvidia Drivers(CUDA)
     Intel Drivers
@@ -18,4 +18,4 @@ as of 12/05/2024 gpu drivers need Ubuntu 22
   Web scrape for best yield (yield switching)
     https://www.nicehash.com/profitability-calculator/nvidia-rtx-4070-ti
     (using nicehash mighten be the best as it depends on overclock setting miner software etc
-  Auto tune GPUS for best power consumption, best performance, balanced
+  Auto tune GPUS for best power consumption, best performance, balanced##
