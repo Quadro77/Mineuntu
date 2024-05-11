@@ -16,13 +16,13 @@ if [ ! -d "$script_path" ]; then
 fi
 
 # Check if /tmp directory exists
-if [ ! -d "/tmp" ]; then
-    echo "/tmp directory does not exist, creating it..."
-    mkdir /tmp || { echo "Error: Failed to create /tmp directory"; exit 1; }
+if [ ! -d "/home/$username/tmp" ]; then
+    echo "/home/$username/tmp directory does not exist, creating it..."
+    mkdir /home/$username/tmp || { echo "Error: Failed to create /home/$username/tmp directory"; exit 1; }
 fi
 
-# Change directory to /tmp
-cd /tmp || { echo "Error: Failed to change directory to /tmp"; exit 1; }
+# Change directory to /home/$username/tmp
+cd /home/$username/tmp || { echo "Error: Failed to change directory to /home/$username/tmp"; exit 1; }
 
 # GitHub repository owner and name
 owner=doktor83
@@ -76,6 +76,6 @@ echo "Sudoers entry added successfully for $username to run $script_path/SRBMine
 
 # Clean up all files in the /tmp directory
 echo "Cleaning up all temporary files..."
-rm -rf /tmp/*
+rm -rf /home/$username/tmp/*
 
 echo "SRBminer has been successfully installed."
