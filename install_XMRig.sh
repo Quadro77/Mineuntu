@@ -1,3 +1,5 @@
+apt  install cmake
+
 1. sudo apt install git build-essential cmake automake libtool autoconf
 2. git clone https://github.com/xmrig/xmrig.git
 3. mkdir xmrig/build && cd xmrig/scripts
