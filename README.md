@@ -2,7 +2,7 @@
 
 as of 12/05/2024 gpu drivers need Ubuntu 22 
 
-##To Do
+## To Do
 
 * Automate Driver Install
 * AMD Drivers
