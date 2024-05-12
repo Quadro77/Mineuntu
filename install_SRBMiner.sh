@@ -43,7 +43,7 @@ fi
 cd /home/$username/tmp || { echo -e "\e[31mError: Failed to change directory to /home/$username/tmp\e[0m"; exit 1; }
 
 # Download the latest release
-echo -e "\e[32mDownloading SRBMiner-Multi $latest_version..."
+echo -e "\e[32mDownloading SRBMiner-Multi $latest_version...\e[0m"
 version_with_hyphens="${latest_version//./-}"
 wget "https://github.com/$owner/$repo/releases/download/$latest_version/$repo-$version_with_hyphens-Linux.tar.gz" || { echo -e "\e[31mError: Failed to download SRBMiner-Multi archive\e[0m"; exit 1; }
 
