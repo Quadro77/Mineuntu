@@ -1,6 +1,6 @@
 # Mineuntu
 
-as of 12/05/2024 gpu drivers need Ubuntu 22 
+as of 12/05/2024 gpu drivers need Ubuntu 22 HWE
 
 ## To Do
 
