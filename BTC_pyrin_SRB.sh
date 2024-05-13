@@ -1,0 +1,1 @@
+./SRBMiner-MULTI --algorithm pyrinhash --disable-cpu --pool stratum+ssl://pyrinhash.unmineable.com:4444 --wallet BTC:bc1qyvtmg28awpnajk2rjkrtr6xvmyqr6yv86l383xd0dy6zj6x5lt7qahsnhh.unmineable_worker_ahgdoxp#wl9w-b25y 
