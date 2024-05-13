@@ -4,11 +4,16 @@
 #./install_SRBMiner.sh
 ###############################################################################################################
 #!/bin/bash
+
 # Check if the script is running as root
 if [[ $EUID -ne 0 ]]; then
     echo -e "\e[31mThis script must be run as root\e[0m" 
     exit 1
 fi
+
+apt-get update
+# install a CLI JSON processor
+apt-get install jq
 
 # Set user account
 username=$(whoami)
