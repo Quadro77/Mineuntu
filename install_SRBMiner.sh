@@ -1,5 +1,5 @@
 ###############################################################################################################
-#wget https://raw.githubusercontent.com/Quadro77/Mineuntu/main/install_SRBMiner.sh
+#wget -O install_SRBMiner.sh https://raw.githubusercontent.com/Quadro77/Mineuntu/main/install_SRBMiner.sh
 #chmod +x install_SRBMiner.sh
 #./install_SRBMiner.sh
 ###############################################################################################################
@@ -13,7 +13,7 @@ fi
 
 apt-get update
 # install a CLI JSON processor
-apt-get install jq
+apt-get install jq -y
 
 # Set user account
 username=$(whoami)
