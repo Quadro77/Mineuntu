@@ -1,5 +1,5 @@
 apt  install cmake
-
+sudo bash
 git clone https://github.com/xmrig/xmrig-cuda.git
 mkdir xmrig-cuda/build && cd xmrig-cuda/build
 
