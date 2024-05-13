@@ -1,5 +1,5 @@
 ###############################################################################################################
-#wget https://raw.githubusercontent.com/owner/repo/branch/path/to/file
+#wget https://raw.githubusercontent.com/Quadro77/Mineuntu/main/install_SRBMiner.sh
 ###############################################################################################################
 #!/bin/bash
 # Check if the script is running as root
