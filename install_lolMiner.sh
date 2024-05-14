@@ -1,8 +1,11 @@
-###############################################################################################################
+stop && wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.88/lolMiner_v1.88_Lin64.tar.gz && tar -xvf lolMiner_v1.88_Lin64.tar.gz && cp -adpR 1.88/lolMiner /app-data/miners/lolminer-1.87 && start
+
+
+#############################################################################################################
 #wget -O install_lolMiner.sh https://raw.githubusercontent.com/Quadro77/Mineuntu/main/install_lolMiner.sh
 #chmod +x install_lolMiner.sh
 #./install_lolMiner.sh
-###############################################################################################################
+#############################################################################################################
 #!/bin/bash
 
 # Check if the script is running as root
@@ -58,7 +61,7 @@ cd /home/$username/tmp || { echo -e "\e[31mError: Failed to change directory to 
 # Download the latest release
 echo -e "\e[32mDownloading $software $latest_version...\e[0m"
 #version_with_hyphens="${latest_version//./-}"
-version_with_hyphens= latest_version
+version_with_hyphens= "V$latest_version"
 wget "https://github.com/$owner/$repo/releases/download/$latest_version/$repo-$version_with_hyphens-Linux.tar.gz" || { echo -e "\e[31mError: Failed to download $software archive\e[0m"; exit 1; }
 
 # Extract the downloaded archive
