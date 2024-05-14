@@ -64,7 +64,7 @@ cd /home/$username/tmp || { echo -e "\e[31mError: Failed to change directory to 
 echo -e "\e[32mDownloading $software $latest_version...\e[0m"
 #version_with_hyphens="${latest_version//./-}"
 #version_with_hyphens= "V$latest_version"
-lolMiner_v1.88_Lin64.tar.gz
+#lolMiner_v1.88_Lin64.tar.gz
 wget "https://github.com/$owner/$repo/releases/download/$latest_version/lolMiner_v"$latest_version"_Lin64.tar.gz" || { echo -e "\e[31mError: Failed to download $software archive\e[0m"; exit 1; }
 
 # Extract the downloaded archive
