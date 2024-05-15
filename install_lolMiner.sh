@@ -1,8 +1,8 @@
 #stop && wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.88/lolMiner_v1.88_Lin64.tar.gz
 #tar -xvf lolMiner_v1.88_Lin64.tar.gz
 #cp -adpR 1.88/lolMiner /app-data/miners/lolminer-1.87 && start
-
-
+https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.88/lolMiner_v1.88_Lin64.tar.gz
+https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.88/lolMiner_v1.88_Lin64.tar.gz
 #############################################################################################################
 #wget -O install_lolMiner.sh https://raw.githubusercontent.com/Quadro77/Mineuntu/main/install_lolMiner.sh
 #chmod +x install_lolMiner.sh
@@ -65,7 +65,7 @@ echo -e "\e[32mDownloading $software $latest_version...\e[0m"
 
 #compessed file name ie lolMiner_v1.88_Lin64.tar.gz
 archive_file="lolMiner_v"$latest_version"_Lin64"
-
+echo -e "\e[32mhttps://github.com/$owner/$repo/releases/download/$latest_version/$archive_file.tar.gz\e[0m"
 wget "https://github.com/$owner/$repo/releases/download/$latest_version/$archive_file.tar.gz" || { echo -e "\e[31mError: Failed to download $software archive\e[0m"; exit 1; }
 
 # Extract the downloaded archive
