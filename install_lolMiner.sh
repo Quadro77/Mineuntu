@@ -62,17 +62,18 @@ cd /home/$username/tmp || { echo -e "\e[31mError: Failed to change directory to 
 
 # Download the latest release
 echo -e "\e[32mDownloading $software $latest_version...\e[0m"
-#version_with_hyphens="${latest_version//./-}"
-#version_with_hyphens= "V$latest_version"
-#lolMiner_v1.88_Lin64.tar.gz
-wget "https://github.com/$owner/$repo/releases/download/$latest_version/lolMiner_v"$latest_version"_Lin64.tar.gz" || { echo -e "\e[31mError: Failed to download $software archive\e[0m"; exit 1; }
+
+#compessed file name ie lolMiner_v1.88_Lin64.tar.gz
+archive_file = lolMiner_v"$latest_version"_Lin64
+
+wget "https://github.com/$owner/$repo/releases/download/$latest_version/$archive_file.tar.gz" || { echo -e "\e[31mError: Failed to download $software archive\e[0m"; exit 1; }
 
 # Extract the downloaded archive
 echo -e "\e[32mExtracting $software archive...\e[0m"
-tar -xzvf "$repo-$version_with_hyphens-Linux.tar.gz" || { echo -e "\e[31mError: Failed to extract $software archive\e[0m"; exit 1; }
+tar -xzvf "$archive_file.tar.gz" || { echo -e "\e[31mError: Failed to extract $software archive\e[0m"; exit 1; }
 
 # Change directory to the extracted directory
-cd "$repo-$version_with_hyphens" || { echo -e "\e[31mError: Failed to change directory to $repo-$latest_version\e[0m"; exit 1; }
+cd "$repo-$latest_version" || { echo -e "\e[31mError: Failed to change directory to $repo-$latest_version\e[0m"; exit 1; }
 
 # Copy the executable
 echo -e "\e[32mCopying $software executable to $folder_path...\e[0m"
