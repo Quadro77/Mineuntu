@@ -1,0 +1,10 @@
+I had the same issue for a long time. It was driving me crazy. Especially annoying as it would freeze randomly during occasional gaming session (using Steam). Freezing was reduced a lot after adding a kernel parameter, amdgpu.gpu_recovery=1. in the boot string. However, this is only the case if you are using the amdgpu driver.
+
+Edit /etc/default/grub.
+
+Modify the value of the variable GRUB_CMDLINE_LINUX_DEFAULT to include amdgpu.gpu_recovery=1.
+
+Run:
+
+sudo update-grub
+Reboot.
